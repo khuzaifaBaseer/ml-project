@@ -1,0 +1,47 @@
+<main class="shell">
+  <header>
+    <h1>IoT Intrusion Detection Dashboard</h1>
+    <p>Teaching prototype • Gradient boosting model on IoTID20 (15 flow features)</p>
+  </header>
+
+  @if (deployedStatic) {
+    <aside class="notice">Static GitHub Pages demonstration only.
+      Predictions require Flask and Angular running locally.</aside>
+  }
+
+  <form (ngSubmit)="submit()">
+    <h2>Model input features ({{ fields.length }})</h2>
+    <div class="grid">
+      @for (field of fields; track field.name) {
+        <label>{{ field.label }}
+          <input type="number" step="any" [name]="field.name"
+                 [min]="field.min ?? null" [max]="field.max ?? null"
+                 [(ngModel)]="values[field.name]" [required]="field.required" />
+        </label>
+      }
+    </div>
+    <button type="submit" [disabled]="loading() || deployedStatic">
+      {{ loading() ? 'Predicting…' : 'Run local prediction' }}
+    </button>
+  </form>
+
+  @if (error()) { <p class="error" role="alert">{{ error() }}</p> }
+
+  @if (result(); as res) {
+    <section class="result">
+      <h2>Prediction result</h2>
+      <p class="label"><strong>{{ res.prediction }}</strong></p>
+      @if (res.probabilities) {
+        <table>
+          <thead><tr><th>Class</th><th>Probability (%)</th></tr></thead>
+          <tbody>
+            @for (row of probabilityRows(res); track row.label) {
+              <tr><td>{{ row.label }}</td><td>{{ row.percent }}</td></tr>
+            }
+          </tbody>
+        </table>
+      }
+      <p>{{ res.disclaimer }}</p>
+    </section>
+  }
+</main>

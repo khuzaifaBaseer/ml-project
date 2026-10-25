@@ -1,0 +1,2 @@
+Protocol,Tot_Bwd_Pkts,Flow_Pkts/s,Flow_IAT_Min,Fwd_IAT_Mean,Fwd_Pkts/s,SYN_Flag_Cnt,RST_Flag_Cnt,URG_Flag_Cnt,ECE_Flag_Cnt,Fwd_Seg_Size_Avg,Subflow_Fwd_Pkts,Subflow_Bwd_Pkts,Subflow_Bwd_Byts,Fwd_Act_Data_Pkts
+6,1,26666.66666666667,75.0,0.0,13333.333333333336,0,0,0,0,0.0,1,1,0,0

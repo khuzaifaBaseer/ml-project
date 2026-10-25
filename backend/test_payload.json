@@ -1,0 +1,17 @@
+{
+  "Protocol": 6.0,
+  "Tot_Bwd_Pkts": 1.0,
+  "Flow_Pkts/s": 26666.66666666667,
+  "Flow_IAT_Min": 75.0,
+  "Fwd_IAT_Mean": 0.0,
+  "Fwd_Pkts/s": 13333.333333333336,
+  "SYN_Flag_Cnt": 0.0,
+  "RST_Flag_Cnt": 0.0,
+  "URG_Flag_Cnt": 0.0,
+  "ECE_Flag_Cnt": 0.0,
+  "Fwd_Seg_Size_Avg": 0.0,
+  "Subflow_Fwd_Pkts": 1.0,
+  "Subflow_Bwd_Pkts": 1.0,
+  "Subflow_Bwd_Byts": 0.0,
+  "Fwd_Act_Data_Pkts": 0.0
+}
