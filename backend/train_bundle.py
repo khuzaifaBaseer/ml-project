@@ -20,8 +20,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 pipeline = Pipeline([
     ("preprocess", MinMaxScaler()),
-    ("model", HistGradientBoostingClassifier(max_iter=300, learning_rate=0.1,
-                                             max_leaf_nodes=127, random_state=42)),
+            ("model", HistGradientBoostingClassifier(max_iter=300, learning_rate=0.1,
+                                             max_leaf_nodes=127, random_state=42,
+                                             class_weight="balanced")),
 ])
 pipeline.fit(X_train, y_train)
 
